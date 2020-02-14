@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Student Registration Form</title>
+<script type="text/javascript">
+function check()
+{
+var name=document.getElementById("studentname").value;
+
+
+
+//var father_name=document.getElementById("fathername").value;
+var address=document.getElementById("Address").value;
+
+
+var pincode=document.getElementById("pincode").value;
+
+var mobileno=document.getElementById("mobileno").value;
+
+var dob=document.getElementById("dob").value;
+
+var emailid=document.getElementById("emailid").value;
+
+var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+if(name=="")
+{
+alert("Please Enter Your Name");
+document.form.name.focus();
+return false;
+}
+if(!isNaN(name))
+{
+alert("Please Enter Only Characters");
+document.form.name.select();
+return false;
+}
+/*if(father_name=="")
+{
+alert("Please Enter Father Name");
+document.form.name.focus();
+return false;
+}
+if(!isNaN(father_name))
+{
+alert("Please Enter Only Characters");
+document.form.name.select();
+return false;
+}*/
+if(address=="")
+{
+alert("Please Enter Your Address");
+document.form.father_name.focus();
+return false;
+}
+if(pincode=="")
+{
+alert("please Enter the Contact Number");
+document.form.pincode.focus();
+return false;
+}
+if(isNaN(pincode))
+{
+alert("Please Enter valid PinCode");
+document.form.pincode.select();
+return false;
+}
+if((pincode.length < 1) || (pincode.length > 6))
+{
+alert(" Your pincode must be 1 to 6 Integers");
+
+return false;
+}
+if(mobileno=="")
+{
+alert("please Enter the Contact Number");
+document.form.mobileno.focus();
+return false;
+}
+if(isNaN(mobileno))
+{
+alert("Enter the valid Mobile Number(Like : 1234567890)");
+document.form.mobileno.focus();
+return false;
+}
+if((mobileno.length < 1) || (mobileno.length > 10))
+{
+alert(" Your Mobile Number must be 1 to 10 Integers");
+
+return false;
+}
+if (!filter.test(emailid.value)) {
+   alert('Please provide a valid email address');
+    
+    return false;
+ }
+
+
+
+
+}
+function openwin(){
+	mywindow=window.open("C:/Users/acer/Desktop/qualities.html","width=200,height=200");
+	mywindow.focus();
+}
+
+
+</script>
+</head>
+<style>
+body
+{
+ margin: 20px;
+padding: 6px;
+border-style:solid;
+font size:4;
+background: url('C:/Users/acer/Desktop/lol.png'); background-repeat: no-repeat;
+background-size: 90%;
+
+
+}
+
+table { 
+background: url('C:/Users/acer/Desktop/lol.png')/* image courtesy of subtlepatterns.com */ 
+background-image: url('C:/Users/acer/Desktop/lol.png')
+background-color: #d9ffd9;
+}
+
+
+</style>
+
+
+<body >
+
+<form  method="post" name="StudentRegistration" action="http://localhost:8080/saveData">
+
+	<table cellpadding="8" width="50%"  align="center"
+	cellspacing="5" border-style:double class="fromtable" >
+	
+	<tr>
+	<td colspan=3>
+	<font size=6><b><center>STUDENT COUNSELLING</center></b></font>
+	</td>
+	</tr>
+	<br>
+	<tr>
+	<td><b>Name :</b></td>
+	<td> <input type="text" name="studentname" placeholder=" enter your name" id="studentname"  size="30" ></td>
+	</tr>
+	
+	<tr>
+	<td><b>Personal Address :</b></td>
+	<td><input type="text" name="personaladdress" placeholder=" Address" id="Address" size="30" >
+	</td>
+	</tr>
+	<tr>
+	<td><b>Sex :</b></td>
+	<td>
+	<input type="radio" name="sex" value="male" size="10" id="male">Male
+	<input type="radio" name="sex" value="Female" size="10" id="male">Female
+	</td>
+	</tr>
+	<!--<tr>
+	<td><b>City :</b></td>
+	<td>
+	<select name="City">
+	<option value="-1" selected>select..</option>
+	<option value="New Delhi" >New Delhi</option>
+	<option value="Mumbai" >Mumbai</option>
+	<option value="Goa" >Goa</option>
+	<option value="Patna" >Patna</option>
+	<option value="Madhya Pradesh" >Madhya Pradesh</option>
+	<option value="Ghazaibad" >Ghazaibad</option>
+	</select></td>
+	</tr>
+	<tr>
+	<td><b>Course :</b></td>
+	<td><select name="Course">
+	<option value="-1" selected>select..</option>
+	<option value="B.Tech">B.TECH</option>
+	<option value="MCA">MCA</option>
+	<option value="MBA">MBA</option>
+	<option value="BCA">BCA</option>
+	</select></td>
+	</tr>
+	<tr>  
+	<td><b>District :</b></td>
+	<td><select name="District">
+	<option value="-1" selected>select..</option>
+	<option value="Nalanda">NALANDA</option>
+	<option value="UP">UP</option>
+	<option value="Goa">GOA</option>
+	<option value="Patna">PATNA</option>
+	</select></td>
+	</tr>
+	<tr>
+	<td><b>State :</b></td>
+	<td><select Name="State">
+	<option value="-1" selected>select..</option>
+	<option value="New Delhi">NEW DELHI</option>
+	<option value="Mumbai">MUMBAI</option>
+	<option value="Goa">GOA</option>
+	<option value="Bihar">BIHAR</option>
+	</select></td>
+	</tr>
+	<tr>
+	<td><b>PinCode :</b></td>
+	<td><input type="text" name="pincode" id="pincode" placeholder=" enter your pincode" size="30" ></td>
+	</tr>-->
+	<tr>
+	<td><b>Email-Id :</b></td>
+	<td><input type="text" name="emailid" id="emailid" placeholder=" enter your email-id"size="30"></td>
+	</tr>
+	<tr>
+	<td><b>D.O.B :</b></td>
+	<td><input type="text" name="dob" id="dob" placeholder=" enter your DOB" size="30" ></td>
+	</tr>
+	<tr>
+	<td><b>Mobile No :</b></td>
+	<td><input type="text" name="mobileno" id="mobileno" placeholder=" enter your number" size="30" ></td>
+	</tr>
+	
+	
+	<td colspan="2">
+	<input type="button" value="save" onclick= >
+	</td>
+	<td colspan="4">
+	<input type="submit" value="Submit" onclick="Javascript:openwin()"  >
+	</td>
+	
+	</table>
+	</form>
+   
+	</body>
+	</html>
